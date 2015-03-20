@@ -1,11 +1,18 @@
+.DS_Store
+
+
+## https://github.com/github/gitignore/blob/master/R.gitignore
 # History files
 .Rhistory
 
-# Example code in package build process
-*-Ex.R
+# emacs temp files
+*~
+\#*
+.#*
+\#*\#
+.DS_Store
+
+
 
 # R data files from past sessions
 .Rdata
-
-# RStudio files
-.Rproj.user/
