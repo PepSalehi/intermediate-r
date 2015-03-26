@@ -3,18 +3,19 @@
 
 Quick Start
 -------------------------------------------------------------------------------
-This is an intermediate-level R workshop focused on fundamental machine learning algorithm implementation, along with some data manipulation exercises.
+This is an intermediate-level R workshop focused on fundamental machine learning algorithm implementation, but will include some data manipulation exercises (using the popular `dplyr` R package).
 
-For part of the workshop, we'll be following along with a free online textbook (by request!) by James et al see below)
+For part of the workshop, we'll be following along with a free online textbook (by request!) by James et al (see below). Best practices will be stressed throughout.
 
-See bottom of this file for a comprehensive abstract
+See bottom of this file for a comprehensive abstract.
 
 Overview/Contents
 -------------------------------------------------------------------------------
 * R Programs
 * Details
-* Sources
 * ABSTRACT
+* Sources
+
 
 
 R Programs
@@ -61,3 +62,7 @@ Sources
 -------------------------------------------------------------------------------
 data for the The President's Fiscal Year 2016 Budget
 https://github.com/WhiteHouse/2016-budget-data
+
+comprehensive overview of this data
+https://medium.com/budget-document
+
