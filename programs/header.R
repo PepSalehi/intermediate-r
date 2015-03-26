@@ -8,10 +8,11 @@
 
 ## essentials
 library(dplyr)
+library(tidyr)
 library(ggplot2)
 
 
 ## directory structure
-homedir <- getwd()
+homedir <- "/Users/pawel/github/intermediate-r"
 datadir <- paste0(homedir, "/data")
 outdir <- paste0(homedir, "/output")
