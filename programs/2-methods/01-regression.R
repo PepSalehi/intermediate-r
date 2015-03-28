@@ -1,3 +1,4 @@
+options(menu.graphics=FALSE)
 diabetes <- read.csv("data/pima-indians-diabetes.data.txt")
 colnames(diabetes) <- c("NumPreg","PlasmaGlucose","BP","SkinFoldThickness","SerumInsulin","BMI","Fam","Age","Diabetes")
 
@@ -71,7 +72,7 @@ plot(Boston$lstat,Boston$medv) ## aha! a non-linear relationship
 lm.fit2 <- lm(medv ~ lstat+I(sqrt(lstat)), data=Boston)
 summary(lm.fit2)
 plot(lm.fit2)
-plot(predict(lm.fit2), rstudent(lm.fit2)) ##non-linearity
+plot(predict(lm.fit2), rstudent(lm.fit2)) ##non-linearity taken care of
 
 ## and finally, put a p-value on how much better this fit is. (a lot)
 anova(lm.fit,lm.fit2)
@@ -86,6 +87,14 @@ print(ta)
 
 ## but! how does that compare to just guessing "no" (the most frequent label) for every instance?
 sum(!diabetes$Diabetes) / nrow(diabetes)  ## only 5% better than guessing "no"
+
+## compare to the results of a logistic regression classifier that only knows
+## the background frequency of diabetes
+logfit0 <- glm(Diabetes ~ 1, data=diabetes,family='binomial')
+summary(logfit0)
+ta <- table(diabetes$Diabetes, predict(logfit0, type='response') > .5)
+print(ta)
+(ta[1,1]) / nrow(diabetes)
 
 ## add in family history
 logfit2 <- glm(Diabetes ~ Age + Fam,data=diabetes,family='binomial')
@@ -290,22 +299,6 @@ for(j in 1:1000) {
 
 cv.stderr <- sd(cv.aucs) / sqrt(nrow(diabetes))
 
-##cn <- c("word_freq_make","word_freq_address","word_freq_all","word_freq_3d","word_freq_our","word_freq_over","word_freq_remove","word_freq_internet","word_freq_order","word_freq_mail","word_freq_receive","word_freq_will","word_freq_people","word_freq_report","word_freq_addresses","word_freq_free","word_freq_business","word_freq_email","word_freq_you","word_freq_credit","word_freq_your","word_freq_font","word_freq_000","word_freq_money","word_freq_hp","word_freq_hpl","word_freq_george","word_freq_650","word_freq_lab","word_freq_labs","word_freq_telnet","word_freq_857","word_freq_data","word_freq_415","word_freq_85","word_freq_technology","word_freq_1999","word_freq_parts","word_freq_pm","word_freq_direct","word_freq_cs","word_freq_meeting","word_freq_original","word_freq_project","word_freq_re","word_freq_edu","word_freq_table","word_freq_conference","char_freq_;","char_freq_(","char_freq_[","char_freq_!","char_freq_$","char_freq_#","capital_run_length_average","capital_run_length_longest","capital_run_length_total","spam")
-##spam <- read.csv("data/spambase.data.txt")
-##colnames(spam) <- cn
-##spam$spam <- spam$spam==1
-##
-#### 0 mean and sd 1
-##for(i in 1:(ncol(spam)-1)) { 
-##  spam[,i] <- scale(spam[,i]) 
-##}
-##
-##lm1 <- lm(`char_freq_$` ~ word_freq_hp + word_freq_meeting + word_freq_000,data=spam)
-##summary(lm1)
-##
-##plot(spam$`char_freq_$`,predict(lm1,newData=spam))
-##
-##library(MASS)
-##lm2 <- glm(spam ~ word_freq_meeting + word_freq_000, data=spam, family='binomial')
-
+plot(density(cv.boot$t[,1]),ylim=c(0,225))
+lines(density(cv.aucs),col='red')
 
