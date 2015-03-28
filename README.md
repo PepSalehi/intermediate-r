@@ -42,18 +42,15 @@ Abstract
 As part of this workshop, you will gain insight into and implement some fundamental classification methods from machine learning, as well as learn intermediate-level data manipulation in R. We will be using the White House Budget data, as well as a free online textbook as a supplementary resource. See details below. You will learn by doing, but we will also provide clear explanations and tell you about best practices. The only requirement is some working familiarity with R (doesn’t have to be much - maybe you’ve done a linear regression) and willingness to engage with some statistical concepts - again, nothing serious. 
 
 ### Topics to be covered 
-1. Fundamentals
-
+(1) Fundamentals  
 * What is machine learning about? What are the main types of algorithms?
 * Basics of model selection and validation.
 
-2. Tools
-
+(2) Tools  
 * Intermediate data manipulation with dplyr
 * Importing data from Excel
 
-3. Methods
-
+(3) Methods  
 * Review: linear and logistic regression
 * Cross-validation, bootstrap, AUC
 * Dealing with non-linearity
