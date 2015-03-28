@@ -1,7 +1,4 @@
-## make sure your working directory ends in "/programs/2-methods"
-getwd()
-
-source("../header.R")
+source("header.R")
 
 ## ============================================================================
 ## DATA PREPARATION
@@ -34,6 +31,10 @@ for(i in 1:(ncol(diabetes)-1)) {
 }
 
 
+## ============================================================================
+## DATA OVERVIEW
+## ============================================================================
+
 
 ## ============================================================================
 ## (1) LDA
@@ -42,8 +43,8 @@ for(i in 1:(ncol(diabetes)-1)) {
 ## Why LDA?
 ## an alternative approach to logistic regression
 ## models distribution of X separately in each class Y
-## (logistic: models P(Y|X) directly, using logistic function)
-##      LDA is more stable in certain situations (p 138)
+## (logistics: models P(Y|X) directly, using logistic function)
+##      is more stable in certain situations (p 138)
 ##
 ## ASSUMPTIONS of LDA
 ## (use Fig on p. 150 to explain)
@@ -52,7 +53,7 @@ for(i in 1:(ncol(diabetes)-1)) {
 ## ============================================================================
 library(MASS)
 
-## (missclassification function)
+## (missclasiffcation function)
 miss <- function(table1){
   za <- (sum(table1)-sum(diag(table1)))/sum(table1)
   return(za)
@@ -188,7 +189,7 @@ qda.pred <- predict(qda.fit, test)
 ## (3) KNN
 ## James et al, p. 39, 163
 ## completely different approach: nonparametric (no parametric assumptions)
-## takes closest observations in space
+## takes closes observations in space
 ## see Figure on p. 40 in James et al
 ## ============================================================================
 library(class)

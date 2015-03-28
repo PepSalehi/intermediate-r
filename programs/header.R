@@ -1,5 +1,5 @@
 ## ============================================================================
-## WHAT         initialization file for _____
+## WHAT         initialization file for this directory 
 ## HOW          
 ## NOTES        
 ## AUTHOR       [AMA!] Pawel Paczuski [pavopax.com]  
@@ -13,6 +13,6 @@ library(ggplot2)
 
 
 ## directory structure
-homedir <- "/Users/pawel/github/intermediate-r"
+homedir <- "../.."
 datadir <- paste0(homedir, "/data")
 outdir <- paste0(homedir, "/output")

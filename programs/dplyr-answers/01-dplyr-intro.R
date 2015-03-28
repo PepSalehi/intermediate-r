@@ -1,7 +1,4 @@
-## make sure your working directory ends in "/programs/1-tools"
-getwd()
-
-source("../header.R")
+source("header.R")
 
 ## ============================================================================
 ## DATA PREPARATION
@@ -10,6 +7,7 @@ dfz <- read.csv(paste0(datadir, "/outlays.csv"))
 dfz <- tbl_df(dfz)
 
 ## ## convert to numeric
+## ## qq
 ## dim(dfz)
 ## dft <- select(dfz, X1962:X2020)
 ## dft <- dft %>% mutate_each(funs(as.character(.))) %>%
@@ -20,6 +18,7 @@ dfz <- tbl_df(dfz)
 ## dim(dfz)
 ## write.csv(dfz, paste0(datadir, "/outlays_edit.csv"))
 
+## qq
 ## df2 <- select(dfz, Agency.Code, Agency.Name, Bureau.Code, Bureau.Name,
 ##                Account.Code, Account.Name, X2012, X2013, X2014, X2015)
 
@@ -42,6 +41,7 @@ glimpse(dfz)
 
 ## other ways to see data?
 ## QQ
+head(as.data.frame(dfz))
 
 
 ## ============================================================================
@@ -80,7 +80,6 @@ head(select(dfz, Agency.Name, Bureau.Name, Account.Name, X2010:X2020))
 
 
 ## (3) "arrange rows with arrange()"
-## uncomment "df2" at top of this file ("Data preparation")
 arrange(df2, Bureau.Code)
 arrange(df2, desc(Bureau.Code))
 arrange(df2, desc(X2015))
@@ -92,14 +91,17 @@ arrange(df2, desc(X2015))
 ## 1           9          25         9915 29,398,000
 ## 2           9          25         9915    167,000
 ## 3           9          25         9915          0
-
-## [your code here]
+df <- select(dfz, Agency.Code, Bureau.Code, Account.Code, X2015)
+df <- filter(df, Agency.Code==9, Bureau.Code==25)
+df <- arrange(df, desc(X2015))
+df
 
 ## ** INTERLUDE: PIPES (... they are your friend and you will love them!)
 ## "piping with %>% makes code more readable"
 ## see PDF handout
 
-## repeat exercise
+## QQ
+## repeat exerices
 dfz %>% select(Agency.Code, Bureau.Code, Account.Code, X2015) %>%
     filter(Agency.Code==9 & Bureau.Code==25) %>%
         arrange(desc(X2015))
@@ -125,17 +127,13 @@ df <- distinct(select(dfz, Agency.Name))
 print(arrange(df, Agency.Name), n=20)
 
 ## qq exercise: try with pipes!
-
-## [your code here]
+dfz %>% select(Agency.Name) %>% distinct() %>% arrange(Agency.Name) %>%
+    print(n=20)
 
 
 
 ## (5) "add new columns with mutate()"
 head(df2)
-## need numeric variables:
-## uncomment and run the chunk of dfz code at top ("Data Preparation")
-## and then, also run again the df2 code at top
-
 mutate(df2, X12_15 = X2012 + X2013 + X2014 + X2015)
 
 ## with pipes
