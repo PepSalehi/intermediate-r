@@ -7,33 +7,41 @@ This is an intermediate-level R workshop focused on fundamental machine learning
 
 For part of the workshop, we'll be following along with a free online textbook (by request!) by James et al (see below). Best practices will be stressed throughout.
 
-See bottom of this file for a comprehensive abstract.
+See below for Requirements/Set-up, and bottom of this file for a comprehensive abstract.
 
 Overview/Contents
 -------------------------------------------------------------------------------
-* Requirements
+* Requirements/Set-up
 * R Programs
 * Details
 * ABSTRACT
 * Sources
 
 
-Requirements
+Requirements/Set-up
 -------------------------------------------------------------------------------
-* all systems running R (version at least 3.0.0) are supported
-* please have the following packages installed:
+1. all systems running R (version at least 3.0.0, but latest is best)
+   are supported
+
+2. please have the following packages installed:
 	
 	`dplyr tidyr MASS ROCR class boot ggplot2`
 
+3. download this repository as zip (see right) and extract to a
+   convenient location
+
+4. see the programs in `/programs/`
+
 R Programs
 -------------------------------------------------------------------------------
+see:  
 /programs/1-tools  
-/programs/2-methods
+/programs/2-methods  
 
 
 Details
 -------------------------------------------------------------------------------
-outlays vs. receipts:  
+For a distinction between outlays vs. receipts in the White House data, see:  
 https://sethssources.wordpress.com/2012/07/15/budget-authority-vs-outlays/
 
 
