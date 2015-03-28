@@ -24,6 +24,8 @@ R Programs
 
 Details
 -------------------------------------------------------------------------------
+outlays vs. receipts:  
+https://sethssources.wordpress.com/2012/07/15/budget-authority-vs-outlays/
 
 
 Abstract
