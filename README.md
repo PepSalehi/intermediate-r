@@ -23,14 +23,7 @@ Requirements
 * working version of R, at least 3.0
 * the following packages installed:
 	
-	dplyr
-	tidyr
-	MASS
-	ROCR
-	class
-	boot
-	tidyr
-	ggplot2
+`dplyr tidyr MASS ROCR class boot tidyr ggplot2`
 
 R Programs
 -------------------------------------------------------------------------------
