@@ -20,10 +20,10 @@ Overview/Contents
 
 Requirements
 -------------------------------------------------------------------------------
-* working version of R, at least 3.0
-* the following packages installed:
+* all systems running R (version at least 3.0.0) are supported
+* please have the following packages installed:
 	
-`dplyr tidyr MASS ROCR class boot ggplot2`
+	`dplyr tidyr MASS ROCR class boot ggplot2`
 
 R Programs
 -------------------------------------------------------------------------------
