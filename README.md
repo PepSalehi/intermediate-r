@@ -11,16 +11,30 @@ See bottom of this file for a comprehensive abstract.
 
 Overview/Contents
 -------------------------------------------------------------------------------
+* Requirements
 * R Programs
 * Details
 * ABSTRACT
 * Sources
 
 
+Requirements
+-------------------------------------------------------------------------------
+* working version of R, at least 3.0
+* the following packages installed:
+	
+	dplyr
+	tidyr
+	MASS
+	ROCR
+	class
+	boot
+	tidyr
+	ggplot2
 
 R Programs
 -------------------------------------------------------------------------------
-/programs/1-tools
+/programs/1-tools  
 /programs/2-methods
 
 
