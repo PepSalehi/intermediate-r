@@ -20,6 +20,8 @@ Overview/Contents
 
 R Programs
 -------------------------------------------------------------------------------
+/programs/1-tools
+/programs/2-methods
 
 
 Details
@@ -49,22 +51,22 @@ As part of this workshop, you will gain insight into and implement some fundamen
 * Classification: LDA, QDA, KNN
 
 ### Resources utilized
-Data for the The President's Fiscal Year 2016 Budget
+Data for the The President's Fiscal Year 2016 Budget  
 https://github.com/whitehouse/2016-budget-data
 
-An Introduction to Statistical Learning with Applications in R, by James et al:
+An Introduction to Statistical Learning with Applications in R, by James et al:  
 http://www-bcf.usc.edu/~gareth/ISL/
 
-NB: previous introductory workshop
+NB: previous introductory workshop  
     https://github.com/pavopax/r-workshop-meetup
 
 
 
 Sources
 -------------------------------------------------------------------------------
-data for the The President's Fiscal Year 2016 Budget
+data for the The President's Fiscal Year 2016 Budget  
 https://github.com/WhiteHouse/2016-budget-data
 
-comprehensive overview of this data
+comprehensive overview of this data  
 https://medium.com/budget-document
 
