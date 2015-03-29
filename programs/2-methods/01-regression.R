@@ -1,3 +1,5 @@
+## programs/2-methods/01-regression.R
+
 options(menu.graphics=FALSE)
 diabetes <- read.csv("data/pima-indians-diabetes.data.txt")
 colnames(diabetes) <- c("NumPreg","PlasmaGlucose","BP","SkinFoldThickness","SerumInsulin","BMI","Fam","Age","Diabetes")
@@ -110,7 +112,7 @@ ta <- table(diabetes$Diabetes,predict(logfit3,type='response') > .5)
 print(ta)
 (ta[1,1] + ta[2,2]) / nrow(diabetes) ## so 78% accuracy... getting better....
 
-## remove Family & PlasmaGlucose
+## remove Family 
 logfit4 <- glm(Diabetes ~ Age + PlasmaGlucose,data=diabetes,family='binomial')
 summary(logfit4)
 ta <- table(diabetes$Diabetes,predict(logfit4,type='response') > .5)
@@ -242,7 +244,8 @@ plot_multiple_ROCs(list(AgeLOOCV=pred,Age10CV=pred.1)) ## not bad
 
 #################################################
 ## bootstrap estimates for logistic coefficients
-boot.fn <- function (data ,index)  return(coef(lm(SerumInsulin ~ PlasmaGlucose ,data=data , subset=index)))
+boot.fn <- function (data ,index)  
+  return(coef(lm(SerumInsulin ~ PlasmaGlucose ,data=data , subset=index)))
 boot.fn(diabetes ,1:392)
 set.seed(1)
 boot.fn(diabetes ,sample (nrow(diabetes),nrow(diabetes), replace=T))
